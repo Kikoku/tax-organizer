@@ -3,7 +3,7 @@ import {Link} from 'react-router';
 
 const Header = () => (
   <header className="Header">
-    Header
+    Header1
   </header>
 );
 
