@@ -22,7 +22,7 @@ export default function createRoutes(store) {
 
   return (
     <Route path="/" component={App}>
-      <Route path="/signup" component={signupPage} />
+      <Route path="/signup" component={SignupPage} />
     </Route>
   );
 }
