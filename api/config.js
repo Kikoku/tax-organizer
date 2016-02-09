@@ -1,9 +1,9 @@
 const environment = {
   development: {
-    db: 'mongodb://localhost/default',
+    db: 'mongodb://localhost/tax-organizer',
   },
   production: {
-    db: 'mongodb://localhost/default',
+    db: 'mongodb://localhost/tax-organizer',
   }
 }[process.env.NODE_ENV || 'development'];
 
