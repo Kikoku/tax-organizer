@@ -1,5 +1,7 @@
 import mongoose, {Schema} from 'mongoose';
+import bcrypt from 'bcrypt';
 import Bluebird from 'bluebird';
+import md5 from 'md5';
 import timestamps from 'mongoose-timestamp';
 
 const userSchema = new Schema({
@@ -11,6 +13,22 @@ const userSchema = new Schema({
   },
   password: String,
   name: {type: String, default: ''}
+});
+
+userSchema.pre('save', function(next) {
+  let user = this;
+  if(!user.isModified('password')) {
+    return next();
+  }
+  this.has_password = true;
+  bcrypt.genSalt(5, function(err, salt) {
+    if(err) return next(err);
+    bcrypt.hash(user.password, salt, function(err, hash) {
+      if(err) return next(err);
+      user.password = hash;
+      next();
+    });
+  });
 });
 
 userSchema.plugin(timestamps, {
