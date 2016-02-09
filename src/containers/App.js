@@ -17,9 +17,7 @@ class App extends Component {
         <DocumentMeta {...config.app} />
         <Header />
         <main>
-        <p>
-          Content
-        </p>
+          {children}
         </main>
         <Footer />
       </div>
