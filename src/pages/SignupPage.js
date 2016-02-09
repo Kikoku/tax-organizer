@@ -1,11 +1,14 @@
-import React, {PropTypes} from 'react';
+import React, {Component, PropTypes} from 'react';
+import SignupContainer from '../containers/SignupContainer';
 
-const SignupPage = () => {
-    <div>
-      <p>
-        SignupPage
-      </p>
-    </div>
+class SignupPage extends Component {
+  render() {
+    return(
+      <div>
+        <SignupContainer />
+      </div>
+    )
+  }
 }
 
 export default SignupPage;
