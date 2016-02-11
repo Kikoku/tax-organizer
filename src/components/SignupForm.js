@@ -9,6 +9,11 @@ class SignupForm extends Component {
     password: ''
   }
 
+  handleSubmit = (e) => {
+    e.preventDefault(e);
+    this.props.handleSignup(this.state);
+  }
+
   handleChange = (e) => {
     this.setState({
       [e.target.name]: e.target.value
@@ -20,7 +25,7 @@ class SignupForm extends Component {
     const {name, email, password} = this.state;
 
     return (
-      <form>
+      <form onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="name"
@@ -35,6 +40,7 @@ class SignupForm extends Component {
           placeholder="email@example.com"
           onChange={this.handleChange}
           value={email}
+          required
         />
         <input
           type="password"
@@ -42,6 +48,7 @@ class SignupForm extends Component {
           placeholder="Password (8+ characters)"
           onChange={this.handleChange}
           value={password}
+          required
         />
         <input
           type="submit"
