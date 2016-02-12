@@ -5,7 +5,8 @@ import DocumentMeta from 'react-document-meta';
 
 const thirdpartyAssets = [
   'http://fonts.googleapis.com/css?family=Open+Sans:400,600',
-  'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css'
+  'https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css',
+  'https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css'
 ]
 
 const Html = ({assets, component, store}) => (
@@ -14,11 +15,11 @@ const Html = ({assets, component, store}) => (
     {DocumentMeta.renderAsReact()}
       <link rel="shortcut icon" href="/favicon.ico" />
       {Object.keys(assets.styles).map((style, i) =>
-      <link
-        href={assets.styles[style]}
-        key={i}
-        rel="stylesheet"
-      />
+        <link
+          href={assets.styles[style]}
+          key={i}
+          rel="stylesheet"
+        />
       )}
       {thirdpartyAssets.map((asset, i) => (
       <link href={asset}
