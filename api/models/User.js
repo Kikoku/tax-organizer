@@ -31,6 +31,31 @@ const userSchema = new Schema({
 //   });
 // });
 
+userSchema.methods = {
+  comparePassword: function(input, cb) {
+
+    if(!input) {
+
+      return cb({
+        msg: 'Invalid login credentials'
+      })
+
+    }
+
+    if(input == this.password) {
+
+      cb(null, true)
+
+    } else {
+
+      return cb({
+        msg: 'Invalid login credentials'
+      })
+
+    }
+  }
+}
+
 userSchema.plugin(timestamps, {
   createdAt: 'created_at',
   updatedAt: 'updated_at'
