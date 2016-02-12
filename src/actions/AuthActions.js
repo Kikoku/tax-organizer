@@ -8,3 +8,10 @@ export function signup(user) {
     promise: axios.post(`/api/auth/signup`, user)
   }
 }
+
+export function login(user) {
+  return {
+    type: types.LOGIN,
+    promise: axios.post(`/api/auth/login`, user)
+  }
+}
