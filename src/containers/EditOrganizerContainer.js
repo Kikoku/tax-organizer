@@ -1,5 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import EditSectionContainer from './EditSectionContainer';
 
 class EditOrganizerContainer extends Component {
 
@@ -7,6 +8,7 @@ class EditOrganizerContainer extends Component {
     return (
       <div>
         EditOrganizerContainer
+        <EditSectionContainer />
       </div>
     );
   }
