@@ -3,7 +3,8 @@ import {Link} from 'react-router';
 
 const Header = () => (
   <header className="Header">
-    Header1
+    <Link to="/signup">Signup</Link>
+    <Link to="/login">Login</Link>
   </header>
 );
 
