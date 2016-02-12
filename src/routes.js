@@ -7,6 +7,8 @@ import App from './containers/App';
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 
+import EditOrganizerPage from './pages/EditOrganizerPage';
+
 export default function createRoutes(store) {
 
   function requireAuth(nextState, replaceState) {
@@ -26,6 +28,7 @@ export default function createRoutes(store) {
     <Route path="/" component={App}>
       <Route path="/signup" component={SignupPage} />
       <Route path="/login" component={LoginPage} />
+      <Route path="/edit" component={EditOrganizerPage} />
     </Route>
   );
 }
