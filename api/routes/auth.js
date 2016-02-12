@@ -12,6 +12,16 @@ const routes = [
         payload: signupPayloadSchema
       }
     }
+  },
+  {
+    method: 'POST',
+    path: '/auth/login',
+    handler: auth.login,
+    config: {
+      validate: {
+        payload: loginPayloadSchema
+      }
+    }
   }
 ];
 
