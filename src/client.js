@@ -7,6 +7,7 @@ import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 import createRoutes from './routes';
 import config from './config';
+import logPageView from './helpers/ga';
 
 const store = configureStore(window.__INITIAL_STATE__);
 const routes = createRoutes(store);
