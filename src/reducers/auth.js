@@ -5,7 +5,9 @@ export const defaultState = {
   user: null,
   error: null,
   isSigningUp: false,
-  isLoading: false
+  isLoading: false,
+  isLoggedIn: false,
+  isLoggingIn: false
 };
 
 export default function auth(state = defaultState, action) {
@@ -31,6 +33,28 @@ export default function auth(state = defaultState, action) {
       return {
         ...state,
         isSigningUp: false,
+        error: action.error.data.message
+      }
+
+    case types.LOGIN_REQUEST:
+      return {
+        ...state,
+        isLoggingIn: true
+      }
+
+    case types.LOGIN:
+      return {
+        ...state,
+        isLoggingIn: false,
+        isLoggedIn: true,
+        user: action.res.data.user,
+        token: action.res.data.token
+      }
+
+    case types.LOGIN_FAILURE:
+      return {
+        ...state,
+        isLoggingIn: false,
         error: action.error.data.message
       }
 

@@ -12,10 +12,12 @@ export default {
     User.findOne({email: email.toLowerCase()})
     .exec((err, user) => {
 
-      if(err) return reply(err)
+      if(err) return reply(err);
 
       if(user && user.email === email.toLowerCase()) {
-        return reply(Boom.badRequest('Email already in use'))
+
+        return reply(Boom.badRequest('Email already in use'));
+
       }
 
       user = new User({
@@ -36,6 +38,34 @@ export default {
 
     })
 
+  },
+  login: (request, reply) => {
+    const {email, password} = request.payload;
+
+    User.findOne({email: email.toLowerCase()})
+    .exec((err, user) => {
+
+      if(err) return reply(err);
+
+      if(!user) return reply(Boom.badRequest('Invalid login credentials'));
+
+      user.comparePassword(password, function(err, match) {
+
+        if(err) return reply(err);
+
+        if(!match) {
+
+          return reply(Boom.badRequest('Invalid login credentials'));
+
+        } else {
+
+          const token = jwt.encode({id: user.id}, config.server.auth.secret);
+
+          reply({user, token});
+
+        }
+      });
+    })
   }
 
 }

@@ -3,7 +3,9 @@ import React from 'react';
 import {Router, Route, IndexRoute, Redirect} from 'react-router';
 
 import App from './containers/App';
+
 import SignupPage from './pages/SignupPage';
+import LoginPage from './pages/LoginPage';
 
 export default function createRoutes(store) {
 
@@ -23,6 +25,7 @@ export default function createRoutes(store) {
   return (
     <Route path="/" component={App}>
       <Route path="/signup" component={SignupPage} />
+      <Route path="/login" component={LoginPage} />
     </Route>
   );
 }
