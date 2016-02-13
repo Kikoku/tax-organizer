@@ -13,24 +13,24 @@ const organizerSchema = new Schema({
   },
   sections: [{
     name: String,
-    number: Number
-  }],
-  questions: [{
-    name: String,
     number: Number,
-    inputType: String,
-    section: {
-      type: Schema.ObjectId
-    }
-  }],
-  options: [{
-    name: String,
-    number: Number,
-    question: {
-      type: Schema.ObjectId
-    }
-  }]
 
+    questions: [{
+      name: String,
+      number: Number,
+      inputType: String,
+
+      options: [{
+        name: String,
+        number: Number,
+        _id: false
+      }],
+
+      _id: false
+    }],
+
+    _id: false
+  }]
 });
 
 organizerSchema.methods = {
