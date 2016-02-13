@@ -5,7 +5,7 @@ class EditOptionsContainer extends Component {
   render() {
     return (
       <div>
-        EditOptionsContaier
+        {this.props.name}
       </div>
     );
   }
