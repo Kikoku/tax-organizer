@@ -8,30 +8,30 @@ export default {
     let organizer = new Organizer ({
       name: 'test organzier',
       sections: [{
-          name: 'test section',
+          name: 'section one',
           number: 1,
           questions: [{
-              name: 'one',
+              name: 'question one',
               number: 1,
               inputType: 'text'
             },{
-              name: 'two',
+              name: 'question two',
               number: 2,
               inputType: 'text'
             }
           ]
         },{
-          name: 'test section 2',
+          name: 'section two',
           number: 2,
           questions: {
-            name: 'three',
+            name: 's2 q1',
             number: 1,
             inputType: 'checkbox',
             options: [{
-                name: 'one',
+                name: 'option 1',
                 number: 1
               },{
-                name: 'two',
+                name: 'option 2',
                 number: 2
               }
             ]
