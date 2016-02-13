@@ -1,5 +1,6 @@
 import organizer from '../handlers/organizer';
 import Joi from 'joi';
+import {mongoIdSchema} from '../payloadSchemas';
 
 const routes = [
   {
@@ -15,6 +16,22 @@ const routes = [
     handler: organizer.testDataRemove,
     config: {
 
+    }
+  },{
+    method: 'GET',
+    path: '/organizer',
+    handler: organizer.list,
+    config: {
+
+    }
+  },{
+    method: 'GET',
+    path: '/organizer/{id}',
+    handler: organizer.show,
+    config: {
+      validate: {
+        params: mongoIdSchema
+      }
     }
   }
 ];
