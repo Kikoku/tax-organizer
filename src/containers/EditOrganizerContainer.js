@@ -12,7 +12,7 @@ import EditSectionContainer from './EditSectionContainer';
 class EditOrganizerContainer extends Component {
 
   componentDidMount() {
-    this.props.getOrganizerById('56bf471d5bf275340d0d9f79');
+    this.props.getOrganizerById('56bf6be17deda7de1037ca79');
   }
 
   render() {
