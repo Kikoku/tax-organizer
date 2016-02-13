@@ -18,7 +18,7 @@ const organizerSchema = new Schema({
   questions: [{
     name: String,
     number: Number,
-    type: String,
+    inputType: String,
     section: {
       type: Schema.ObjectId
     }
