@@ -6,8 +6,10 @@ class EditQuestionContainer extends Component {
   render() {
     return (
       <div>
-        EditQuestionContainer
-        <EditOptionsContainer />
+        {this.props.name}
+        {this.props.options.map(option =>
+          <EditOptionsContainer name={option.name}/>
+        )}
       </div>
     );
   }
