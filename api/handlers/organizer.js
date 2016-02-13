@@ -9,32 +9,33 @@ export default {
       name: 'test organzier',
       sections: [{
           name: 'test section',
-          number: 1
+          number: 1,
+          questions: [{
+              name: 'one',
+              number: 1,
+              inputType: 'text'
+            },{
+              name: 'two',
+              number: 2,
+              inputType: 'text'
+            }
+          ]
         },{
           name: 'test section 2',
-          number: 2
-        }
-      ],
-      options: [{
-          name: 'one',
-          number: 1
-        },{
-          name: 'two',
-          number: 2
-        }
-      ],
-      questions: [{
-          name: 'one',
-          number: 1,
-          inputType: 'text'
-        },{
-          name: 'two',
           number: 2,
-          inputType: 'text'
-        },{
-          name: 'three',
-          number: 1,
-          inputType: 'checkbox'
+          questions: {
+            name: 'three',
+            number: 1,
+            inputType: 'checkbox',
+            options: [{
+                name: 'one',
+                number: 1
+              },{
+                name: 'two',
+                number: 2
+              }
+            ]
+          }
         }
       ]
     });
