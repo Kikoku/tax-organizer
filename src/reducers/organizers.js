@@ -7,7 +7,14 @@ export const defaultState = {
   isOrganizerLoaded: false,
   organizers: [],
   organizer: {
-    _id: ''
+    _id: '',
+    sections: [{
+      questions: [{
+        options: [{
+
+        }]
+      }]
+    }]
   }
 };
 
@@ -19,7 +26,8 @@ export default function organzier(state = defaultState, action) {
       return {
         ...state,
         isLoading: true,
-        isLoaded: false
+        isLoaded: false,
+        organizers: action.res.data
       }
 
     case types.GET_ORGANIZER_BY_ID:
