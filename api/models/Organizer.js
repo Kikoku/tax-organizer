@@ -18,11 +18,13 @@ const organizerSchema = new Schema({
     questions: [{
       name: String,
       number: Number,
+      value: String,
       inputType: String,
 
       options: [{
         name: String,
         number: Number,
+        value: String,
         _id: false
       }],
 
