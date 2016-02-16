@@ -6,7 +6,7 @@ export default {
   testData: (request, reply) => {
 
     let organizer = new Organizer ({
-      name: 'test organzier',
+      name: 'test organzier mid',
       sections: [{
           name: 'section one',
           number: 1,
@@ -28,10 +28,48 @@ export default {
             number: 1,
             inputType: 'checkbox',
             options: [{
-                name: 'option 1',
+                name: 'check 1',
+                value: 'options 1',
                 number: 1
               },{
-                name: 'option 2',
+                name: 'check 2',
+                value: 'options 1',
+                number: 2
+              }
+            ]
+          }
+        },{
+          name: 'section three',
+          number: 3,
+          questions: {
+            name: 's3 q1',
+            number: 1,
+            inputType: 'select',
+            options: [{
+                name: 'select 1',
+                value: 'options 1',
+                number: 1
+              },{
+                name: 'select 2',
+                value: 'options 1',
+                number: 2
+              }
+            ]
+          }
+        },{
+          name: 'section four',
+          number: 4,
+          questions: {
+            name: 's4 q1',
+            number: 1,
+            inputType: 'radio',
+            options: [{
+                name: 'radio 1',
+                value: 'options 1',
+                number: 1
+              },{
+                name: 'radio 2',
+                value: 'options 1',
                 number: 2
               }
             ]
@@ -47,7 +85,7 @@ export default {
   },
   testDataRemove: (request, reply) => {
 
-    Organizer.remove({name:'test organzier'})
+    Organizer.remove({name:'test organzier mid'})
     .exec((err, organzier) => {
 
       if(err) return reply(err);
@@ -58,7 +96,6 @@ export default {
 
   },
   list: (request, reply) => {
-
     Organizer.find()
     .exec((err, organizers) => {
 
