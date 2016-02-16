@@ -9,7 +9,7 @@ class NavContainer extends Component {
       <div>
         <Link to="/signup" className="col-xs-12 col-md-2"><i className="fa fa-user-plus"></i> Signup</Link>
         <Link to="/login" className="col-xs-12 col-md-2"><i className="fa fa-lock"></i> Login</Link>
-        <Link to="/edit" className="col-xs-12 col-md-2"><i className="fa fa-pencil-square-o"></i> Edit</Link>
+        <Link to="/organizer" className="col-xs-12 col-md-2"><i className="fa fa-pencil-square-o"></i> Organizer</Link>
       </div>
     );
   }
