@@ -66,6 +66,14 @@ export default {
         }
       });
     })
+  },
+  jwtLogin: (request, reply) => {
+    const {token} = request.payload;
+    const {id} = jwt.decode(token, config.server.auth.secret);
+
+    User.findByIdAsync(id)
+    .then(user => reply({user, token}))
+    .catch(reply);
   }
 
 }
