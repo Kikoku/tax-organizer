@@ -6,6 +6,9 @@ import config from '../config';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 
+import RememberMe from '../decorators/RememberMe';
+
+@RememberMe
 class App extends Component {
   render() {
     const {children, location} = this.props;
