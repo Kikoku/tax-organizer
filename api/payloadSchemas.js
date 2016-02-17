@@ -1,6 +1,8 @@
 import Joi from 'joi';
 
-export const mongoIdSchema = Joi.string().regex(/^[0-9a-fA-F]{24}$/);
+export const mongoIdSchema = {
+  id: Joi.string().regex(/^[0-9a-fA-F]{24}$/)
+}
 
 export const signupPayloadSchema = {
   email: Joi.string().trim().required(),
