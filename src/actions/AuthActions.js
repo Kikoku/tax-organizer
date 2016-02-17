@@ -15,3 +15,16 @@ export function login(user) {
     promise: axios.post(`/api/auth/login`, user)
   }
 }
+
+export function authWithToken(token) {
+  return {
+    type: types.AUTH_WITH_TOKEN,
+    promise: axios.post(`/api/auth/jwt`, {token})
+  }
+}
+
+export function logout() {
+  return {
+    type: types.LOGOUT
+  }
+}
