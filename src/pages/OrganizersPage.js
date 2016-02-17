@@ -5,6 +5,9 @@ class OrganizersPage extends Component {
   render() {
     return(
       <div>
+        <h2>
+          Oragnizers
+        </h2>
         <OrganizersContainer />
       </div>
     )
