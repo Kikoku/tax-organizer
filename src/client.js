@@ -7,7 +7,6 @@ import {Provider} from 'react-redux';
 import configureStore from './store/configureStore';
 import createRoutes from './routes';
 import config from './config';
-import logPageView from './helpers/ga';
 
 const store = configureStore(window.__INITIAL_STATE__);
 const routes = createRoutes(store);
@@ -17,7 +16,7 @@ const history = createBrowserHistory();
 const mountNode = document.getElementById('app');
 
 const component = (
-  <Router history={history} routes={routes} onUpdate={logPageView} />
+  <Router history={history} routes={routes} />
 );
 
 ReactDOM.render(
