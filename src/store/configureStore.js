@@ -2,13 +2,15 @@ import {combineReducers, createStore, applyMiddleware, compose} from 'redux';
 import loggerMiddleware from 'redux-logger';
 import thunk from 'redux-thunk';
 import promiseMiddleware from '../middleware/promiseMiddleware';
+import authMiddleware from '../middleware/authMiddleware';
 import rootReducer from '../reducers';
 
 export default function configureStore(initialState) {
 
   const middleware = [
     thunk,
-    promiseMiddleware
+    promiseMiddleware,
+    authMiddleware
   ];
 
   if(__DEVELOPMENT__ && __CLIENT__) {

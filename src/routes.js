@@ -6,6 +6,7 @@ import App from './containers/App';
 
 import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
+import LogoutPage from './pages/LogoutPage';
 
 import OrganizersPage from './pages/OrganizersPage';
 import OrganizerPage from './pages/OrganizerPage';
@@ -29,8 +30,9 @@ export default function createRoutes(store) {
     <Route path="/" component={App}>
       <Route path="/signup" component={SignupPage} />
       <Route path="/login" component={LoginPage} />
-      <Route path="/organizer" component={OrganizersPage} />
-      <Route path="/organizer/:id" component={OrganizerPage} />
+      <Route path="/logout" component={LogoutPage} />
+      <Route path="/organizer" component={OrganizersPage} onEnter={requireAuth} />
+      <Route path="/organizer/:id" component={OrganizerPage} onEnter={requireAuth} />
     </Route>
   );
 }
