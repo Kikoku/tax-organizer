@@ -22,6 +22,18 @@ const routes = [
         payload: loginPayloadSchema
       }
     }
+  },
+  {
+    method: 'POST',
+    path: '/auth/jwt',
+    handler: auth.jwtLogin,
+    config: {
+      validate: {
+        payload: {
+          token: Joi.string().required()
+        }
+      }
+    }
   }
 ];
 
