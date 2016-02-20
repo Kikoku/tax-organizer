@@ -30,6 +30,7 @@ class LoginContainer extends Component {
   }
 
   render() {
+
     const {error, loading} = this.props;
 
     return (
@@ -37,7 +38,7 @@ class LoginContainer extends Component {
         <h2>
           Login
         </h2>
-        <LoginForm handleLogin={this.handleLogin}/>
+        <LoginForm handleLogin={this.handleLogin} error={error}/>
       </div>
     );
   }
