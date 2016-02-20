@@ -6,13 +6,15 @@ class SectionContainer extends Component {
   renderQuestion(input) {
     if(input) {
       return(
-        input.map(question =>
-          <QuestionContainer
-            name={question.name}
-            inputType={question.inputType}
-            options={question.options}
-          />
-        )
+        <div className="Question col-lg-12">
+          {input.map(question =>
+            <QuestionContainer
+              name={question.name}
+              inputType={question.inputType}
+              options={question.options}
+            />
+          )}
+        </div>
       )
     }
   }
@@ -22,8 +24,8 @@ class SectionContainer extends Component {
     const {name, questions} = this.props;
 
     return (
-      <div className="col-xs-10 col-xs-offset-1 col-lg-8 col-lg-offset-2 SectionContainer">
-        <h2>
+      <div className="Container row">
+        <h2 className="col-lg-12">
           {name}
         </h2>
         {this.renderQuestion(questions)}

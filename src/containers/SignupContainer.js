@@ -20,8 +20,8 @@ class SignupContainer extends Component {
     const {error, loading} = this.props;
 
     return (
-      <div>
-        <h2>
+      <div className="Container row">
+        <h2 className="col-lg-12">
           Sign Up
         </h2>
         <SignupForm handleSignup={this.handleSignup}/>
