@@ -8,6 +8,14 @@ class LoginForm extends Component {
     password: ''
   }
 
+  componentWillReceiveProps(nextProps) {
+    if(nextProps.error) {
+      this.setState({
+        'password': ''
+      })
+    }
+  }
+
   handleSubmit = (e) => {
     e.preventDefault(e);
     this.props.handleLogin(this.state);
@@ -45,6 +53,7 @@ class LoginForm extends Component {
           type="submit"
           value="Signup"
         />
+        <p>{error}</p>
       </form>
     );
   }
