@@ -11,25 +11,25 @@ input[type="text"], input[type="password"], input[type="email"], select {
   margin: 10px 0px;
   width: 100%;
   text-indent: 10px;
-  box-shadow: 0 0 0 #16a085;
+  box-shadow: 0 0 0 $darkPrimary;
   transition: all .3s;
 }
 
 input[type="text"]:hover, input[type="password"]:hover, input[type="email"]:hover, select:hover {
-  box-shadow: 0px 0px 2px #16a085;
+  box-shadow: 0px 0px 2px $darkPrimary;
   transition: all .3s;
 }
 
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, select:focus {
-  box-shadow: 0px 0px 8px #16a085;
+  box-shadow: 0px 0px 8px $darkPrimary;
   transition: all .3s;
 }
 
 input[type="submit"] {
   width: 100%;
   border: none;
-  background: #1abc9c;
+  background: $lightPrimary;
   color: white;
   border-radius: 5px;
   height: 40px;
@@ -38,5 +38,5 @@ input[type="submit"] {
 }
 
 input[type="submit"]:hover {
-  background: #16a085;
+  background: $darkPrimary;
 }

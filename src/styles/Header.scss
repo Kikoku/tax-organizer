@@ -1,5 +1,5 @@
 .Header {
-  background: #ecf0f1;
+  background: $lightSecondary;
   height: 40px;
   line-height: 40px;
   position: fixed;;
@@ -9,12 +9,12 @@
 
   a, .username {
     text-align: center;
-    color: #7f8c8d;
+    color: $darkSecondary;
     text-decoration: none;
     transition: all .3s;
   }
   a:hover, .username:hover {
-    background: #16a085;
+    background: $darkPrimary;
     color: white;
     text-decoration: none;
   }
