@@ -24,7 +24,7 @@ class LoginForm extends Component {
     const {email, password} = this.state;
 
     return (
-      <form onSubmit={this.handleSubmit}>
+      <form className="Question col-lg-12" onSubmit={this.handleSubmit}>
         <input
           type="text"
           name="email"
