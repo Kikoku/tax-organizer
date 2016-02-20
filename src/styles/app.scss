@@ -1,4 +1,17 @@
 @import 'Header';
 @import 'Footer';
 
+@import 'Containers';
+@import 'Inputs';
+
+@import 'Pages';
 @import 'SectionContainer';
+
+body {
+  background: #1abc9c;
+  color: #7f8c8d;
+}
+
+h1 {
+  color: white;
+}
