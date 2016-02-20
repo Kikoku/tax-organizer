@@ -44,13 +44,11 @@ userSchema.methods = {
 
     if(input == this.password) {
 
-      cb(null, true)
+      cb(null, true);
 
     } else {
 
-      return cb({
-        msg: 'Invalid login credentials'
-      })
+      cb(null, false);
 
     }
   }
