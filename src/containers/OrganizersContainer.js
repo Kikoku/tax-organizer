@@ -1,6 +1,6 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
-import OrganizerCard from '../containers/OrganizerCard';
+import OrganizerCard from '../components/OrganizerCard';
 
 import {getOrganizers} from '../actions/OrganizerActions'
 

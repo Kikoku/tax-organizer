@@ -9,8 +9,8 @@ class OrganizerCard extends Component {
     const {name, id} = this.props;
 
     return(
-      <div className="col-xs-4 col-xs-offset-1 col-lg-2 col-lg-offset-1">
-        <Link to={`/organizer/${id}`}>{name}</Link>
+      <div className="Container Question row">
+        <Link to={`/organizer/${id}`} className="col-lg-12">{name}</Link>
       </div>
     )
   }
