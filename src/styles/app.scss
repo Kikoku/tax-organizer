@@ -1,3 +1,8 @@
+$lightPrimary: #1abc9c;
+$darkPrimary: #16a085;
+$lightSecondary: #ecf0f1;
+$darkSecondary: #7f8c8d;
+
 @import 'Header';
 @import 'Footer';
 
@@ -5,11 +10,10 @@
 @import 'Inputs';
 
 @import 'Pages';
-@import 'SectionContainer';
 
 body {
-  background: #1abc9c;
-  color: #7f8c8d;
+  background: $lightPrimary;
+  color: $darkSecondary;
 }
 
 h1 {
