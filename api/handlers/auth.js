@@ -47,7 +47,7 @@ export default {
 
       if(err) return reply(err);
 
-      if(!user) return reply(Boom.badRequest('Invalid login credentials'));
+      if(!user) return reply(Boom.unauthorized('Invalid login credentials'));
 
       user.comparePassword(password, function(err, match) {
 
@@ -55,7 +55,7 @@ export default {
 
         if(!match) {
 
-          return reply(Boom.badRequest('Invalid login credentials'));
+          return reply(Boom.unauthorized('Invalid login credentials'));
 
         } else {
 
