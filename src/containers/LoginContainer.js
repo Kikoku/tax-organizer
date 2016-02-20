@@ -34,8 +34,8 @@ class LoginContainer extends Component {
     const {error, loading} = this.props;
 
     return (
-      <div>
-        <h2>
+      <div className="Container row">
+        <h2 className="col-lg-12">
           Login
         </h2>
         <LoginForm handleLogin={this.handleLogin} error={error}/>

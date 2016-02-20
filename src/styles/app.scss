@@ -1,4 +1,21 @@
+$lightPrimary: #1abc9c;
+$darkPrimary: #16a085;
+$lightSecondary: #ecf0f1;
+$darkSecondary: #7f8c8d;
+
 @import 'Header';
 @import 'Footer';
 
-@import 'SectionContainer';
+@import 'Containers';
+@import 'Inputs';
+
+@import 'Pages';
+
+body {
+  background: $lightPrimary;
+  color: $darkSecondary;
+}
+
+h1 {
+  color: white;
+}

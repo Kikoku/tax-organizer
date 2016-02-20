@@ -1,0 +1,19 @@
+.Container {
+  background: $darkPrimary;
+  margin-top: 20px;
+  border-radius: 5px;
+  padding-bottom: 15px;
+}
+
+.Container h2 {
+  color: white;
+}
+
+.Question {
+  background: $lightSecondary;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  margin-bottom: -15px;
+}

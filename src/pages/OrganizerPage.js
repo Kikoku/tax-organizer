@@ -7,7 +7,7 @@ class OrganizerPage extends Component {
     const {id} = this.props.params;
 
     return(
-      <div className="row">
+      <div className="Page">
         <OrganizerContainer id={id}/>
       </div>
     )

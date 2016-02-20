@@ -18,9 +18,11 @@ class OrganizerContainer extends Component {
   renderSections(input) {
     if(input.sections) {
       return (
-        input.sections.map(section =>
+        <div>
+        {input.sections.map(section =>
           <SectionContainer name={section.name} questions={section.questions}/>
-        )
+        )}
+        </div>
       )
     }
   }
@@ -30,8 +32,8 @@ class OrganizerContainer extends Component {
     const {organizer} = this.props;
 
     return (
-      <div className="row">
-        <div className="col-lg-12">
+      <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+        <div>
           <h1>
             {organizer.name}
           </h1>

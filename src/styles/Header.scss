@@ -1,6 +1,21 @@
 .Header {
+  background: $lightSecondary;
+  height: 40px;
+  line-height: 40px;
+  position: fixed;;
+  top: 0;
+  width: 100%;
+  z-index: 99999999;
 
   a, .username {
     text-align: center;
+    color: $darkSecondary;
+    text-decoration: none;
+    transition: all .3s;
+  }
+  a:hover, .username:hover {
+    background: $darkPrimary;
+    color: white;
+    text-decoration: none;
   }
 }
