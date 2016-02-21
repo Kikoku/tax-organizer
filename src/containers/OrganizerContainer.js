@@ -16,13 +16,14 @@ class OrganizerContainer extends Component {
   }
 
   renderSections(input) {
+
+    let editing = false;
+
     if(input.sections) {
       return (
-        <div>
-        {input.sections.map(section =>
-          <SectionContainer name={section.name} questions={section.questions}/>
-        )}
-        </div>
+        input.sections.map(section =>
+          <SectionContainer name={section.name} questions={section.questions} />
+        )
       )
     }
   }
@@ -33,11 +34,9 @@ class OrganizerContainer extends Component {
 
     return (
       <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
-        <div>
-          <h1>
-            {organizer.name}
-          </h1>
-        </div>
+        <h1 className="row">
+          {organizer.name}
+        </h1>
         {this.renderSections(organizer)}
       </div>
     );
