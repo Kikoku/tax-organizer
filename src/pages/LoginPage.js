@@ -4,7 +4,7 @@ import LoginContainer from '../containers/LoginContainer';
 class LoginPage extends Component {
   render() {
     return(
-      <div className="Page col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
+      <div className="Page col-xs-10 col-xs-push-1 col-sm-8 col-sm-push-2 col-md-3 col-md-push-4">
         <LoginContainer />
       </div>
     )

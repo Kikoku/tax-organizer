@@ -19,9 +19,13 @@ class App extends Component {
       <div>
         <DocumentMeta {...config.app} />
         <Header className="row"/>
-        <main className="row">
-          {children}
-        </main>
+          <section class="main-content">
+            <div class="container">
+                <main className="row">
+                  {children}
+                </main>
+            </div>
+          </section>
         <Footer className="row"/>
       </div>
     )
