@@ -16,14 +16,14 @@ class NavContainer extends Component {
     return (
       <div>
         {isLoggedIn
-          ? <div className="col-md-2 username">{user.name}</div>
-          : <Link to="/signup" className="col-md-2"><i className="fa fa-user-plus"></i> Signup</Link>
+          ? <div className="col-xs-2 username">{user.name}</div>
+          : <Link to="/signup" className="col-xs-2"><i className="fa fa-user-plus"></i> Signup</Link>
         }
         {isLoggedIn
-          ? <Link to="/logout" className="col-md-2"><i className="fa fa-lock"></i> Logout</Link>
-          : <Link to="/login" className="col-md-2"><i className="fa fa-lock"></i> Login</Link>
+          ? <Link to="/logout" className="col-xs-2"><i className="fa fa-lock"></i> Logout</Link>
+          : <Link to="/login" className="col-xs-2"><i className="fa fa-lock"></i> Login</Link>
         }
-        <Link to="/organizer" className="col-md-2"><i className="fa fa-pencil-square-o"></i> Organizer</Link>
+        <Link to="/organizer" className="col-xs-2"><i className="fa fa-pencil-square-o"></i> Organizer</Link>
       </div>
     );
   }

