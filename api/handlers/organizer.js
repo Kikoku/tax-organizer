@@ -113,5 +113,22 @@ export default {
 
       reply(organizer);
     })
+  },
+  new: (request, reply) => {
+    console.log('new');
+
+    const {name} = request.payload;
+
+    const organizer = new Organizer({
+      name,
+      sections: []
+    });
+
+    organizer.save((err, organizer) => {
+
+      if(err) return reply(err);
+
+      reply(organizer);
+    })
   }
 }
