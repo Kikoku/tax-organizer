@@ -15,3 +15,10 @@ export function getOrganizerById(id) {
     promise: axios.get(`/api/organizer/${id}`)
   }
 }
+
+export function newOrganizer(name) {
+  return {
+    type: types.NEW_ORGANIZER,
+    promise: axios.post(`/api/organizer`, name)
+  }
+}
