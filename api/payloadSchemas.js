@@ -7,7 +7,8 @@ export const mongoIdSchema = {
 export const signupPayloadSchema = {
   email: Joi.string().trim().required(),
   password: Joi.string().required().min(8),
-  name: Joi.string().trim().required()
+  name: Joi.string().trim().required(),
+  role: Joi.string()
 }
 
 export const loginPayloadSchema = {
