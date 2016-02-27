@@ -5,7 +5,9 @@ export const defaultState = {
   isLoaded: false,
   isOrganzierLoading: false,
   isOrganizerLoaded: false,
+  isCreatingOrganizer: false,
   organizers: [],
+  new: undefined,
   organizer: {
     _id: '',
     sections: [{
@@ -36,6 +38,22 @@ export default function organzier(state = defaultState, action) {
         isLoading: true,
         isLoaded: false,
         organizer: action.res.data
+      }
+
+    case types.NEW_ORGANIZER_REQUEST:
+      return{
+        ...state,
+        isCreatingOrganizer: true
+      }
+
+    case types.NEW_ORGANIZER:
+      return{
+        ...state,
+        new: action.res.data._id,
+        organizers: [
+          ...state.organizers,
+          action.res.data
+        ]
       }
 
     default:
