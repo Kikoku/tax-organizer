@@ -12,7 +12,8 @@ const userSchema = new Schema({
     lowercase: true
   },
   password: String,
-  name: {type: String, default: ''}
+  name: {type: String, default: ''},
+  role: {type: String, default: 'client'}
 });
 
 // userSchema.pre('save', function(next) {
