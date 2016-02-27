@@ -1,6 +1,6 @@
 import organizer from '../handlers/organizer';
 import Joi from 'joi';
-import {mongoIdSchema} from '../payloadSchemas';
+import {mongoIdSchema, newOrganizerSchema} from '../payloadSchemas';
 
 const routes = [
   {
@@ -23,6 +23,15 @@ const routes = [
     handler: organizer.list,
     config: {
 
+    }
+  },{
+    method: 'POST',
+    path: '/organizer',
+    handler: organizer.new,
+    config: {
+      validate: {
+        payload: newOrganizerSchema
+      }
     }
   },{
     method: 'GET',

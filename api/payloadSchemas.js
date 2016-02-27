@@ -8,10 +8,14 @@ export const signupPayloadSchema = {
   email: Joi.string().trim().required(),
   password: Joi.string().required().min(8),
   name: Joi.string().trim().required(),
-  role: Joi.string()
+  role: Joi.string().required()
 }
 
 export const loginPayloadSchema = {
   email: Joi.string().trim().required(),
   password: Joi.string().required()
+}
+
+export const newOrganizerSchema = {
+  name: Joi.string().required()
 }

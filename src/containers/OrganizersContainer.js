@@ -1,18 +1,39 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import OrganizerCard from '../components/OrganizerCard';
+import OrganizerForm from '../components/OrganizerForm';
 
-import {getOrganizers} from '../actions/OrganizerActions'
+import {getOrganizers, newOrganizer} from '../actions/OrganizerActions';
 
 @connect(state => ({
-  organizers: state.organizers.organizers
+  organizers: state.organizers.organizers,
+  isCreatingOrganizer: state.organizers.isCreatingOrganizer,
+  new: state.organizers.new
 }), {
-  getOrganizers
+  getOrganizers,
+  newOrganizer
 })
 class OrganizersContainer extends Component {
 
+  static contextTypes = {
+    history: PropTypes.object.isRequired,
+    location: PropTypes.object.isRequired
+  }
+
+  componentWillReceiveProps(nextProps) {
+
+    if(nextProps.new != this.props.new) {
+      const nextPath = this.context.location.query.next || `/organizer/${nextProps.new}`;
+      this.context.history.pushState(null, nextPath);
+    }
+  }
+
   componentWillMount() {
     this.props.getOrganizers();
+  }
+
+  handleNewOrganizer = (name) => {
+    this.props.newOrganizer(name);
   }
 
   render() {
@@ -30,6 +51,7 @@ class OrganizersContainer extends Component {
               <OrganizerCard name={organizer.name} id={organizer._id}/>
             )
           }
+          <OrganizerForm handleNewOrganizer={this.handleNewOrganizer}/>
         </div>
       </div>
     )
