@@ -61,27 +61,27 @@ export default function auth(state = defaultState, action) {
         error: action.error.data.message
       }
 
-      case types.AUTH_WITH_TOKEN_REQUEST:
-        return {
-          ...state,
-          isLoggingInWithToken: true
-        }
+    case types.AUTH_WITH_TOKEN_REQUEST:
+      return {
+        ...state,
+        isLoggingInWithToken: true
+      }
 
-      case types.AUTH_WITH_TOKEN:
-        return {
-          ...state,
-          isLoggingInWithToken: false,
-          isLoggedIn: true,
-          user: action.res.data.user,
-          token: action.res.data.token,
-        }
+    case types.AUTH_WITH_TOKEN:
+      return {
+        ...state,
+        isLoggingInWithToken: false,
+        isLoggedIn: true,
+        user: action.res.data.user,
+        token: action.res.data.token,
+      }
 
-      case types.AUTH_WITH_TOKEN_FAILURE:
-        return {
-          ...state,
-          error: action.error,
-          isLoggingInWithToken: false
-        }
+    case types.AUTH_WITH_TOKEN_FAILURE:
+      return {
+        ...state,
+        error: action.error,
+        isLoggingInWithToken: false
+      }
 
     case types.LOGOUT:
       return {
