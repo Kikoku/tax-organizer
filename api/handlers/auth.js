@@ -7,7 +7,7 @@ export default {
 
   signup: (request, reply) => {
 
-    const {email, password, name} = request.payload;
+    const {email, password, name, role} = request.payload;
 
     User.findOne({email: email.toLowerCase()})
     .exec((err, user) => {
@@ -23,7 +23,8 @@ export default {
       user = new User({
         email,
         password,
-        name
+        name,
+        role
       });
 
       user.save((err, user) => {

@@ -6,7 +6,9 @@ class SignupForm extends Component {
   state = {
     name: '',
     email: '',
-    password: ''
+    password: '',
+    role: 'client'
+
   }
 
   handleSubmit = (e) => {
@@ -50,6 +52,10 @@ class SignupForm extends Component {
           value={password}
           required
         />
+        <select name="role" onChange={this.handleChange}>
+          <option name="role" value="client">Client</option>
+          <option name="role" value="admin">Admin</option>
+        </select>
         <input
           type="submit"
           value="Signup"

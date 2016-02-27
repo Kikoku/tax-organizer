@@ -51,7 +51,7 @@ class LoginForm extends Component {
         />
         <input
           type="submit"
-          value="Signup"
+          value="Login"
         />
         <p>{error}</p>
       </form>
