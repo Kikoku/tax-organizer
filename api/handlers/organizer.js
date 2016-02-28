@@ -115,7 +115,6 @@ export default {
     })
   },
   new: (request, reply) => {
-    console.log('new');
 
     const {name} = request.payload;
 
@@ -129,6 +128,17 @@ export default {
       if(err) return reply(err);
 
       reply(organizer);
+    })
+  },
+  delete: (request, reply) => {
+    Organizer.findById(request.params.id)
+    .exec((err, organizer) => {
+
+      if(err) return reply(err);
+
+      organizer.remove();
+
+      reply(organizer).code(200);
     })
   }
 }
