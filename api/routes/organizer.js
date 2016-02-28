@@ -42,6 +42,15 @@ const routes = [
         params: mongoIdSchema
       }
     }
+  },{
+    method: 'DELETE',
+    path: '/organizer/{id}',
+    handler: organizer.delete,
+    config: {
+      validate: {
+        params: mongoIdSchema
+      }
+    }
   }
 ];
 
