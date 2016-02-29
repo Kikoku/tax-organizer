@@ -3,7 +3,7 @@ import {connect} from 'react-redux';
 import OrganizerCard from '../components/OrganizerCard';
 import OrganizerForm from '../components/OrganizerForm';
 
-import {getOrganizers, newOrganizer} from '../actions/OrganizerActions';
+import {getOrganizers, newOrganizer, deleteOrganizer} from '../actions/OrganizerActions';
 
 @connect(state => ({
   organizers: state.organizers.organizers,
@@ -39,6 +39,7 @@ class OrganizersContainer extends Component {
   render() {
 
     const {organizers} = this.props;
+    const deleteThis = this.handleDeleteOrganizer;
 
     return(
       <div className="col-xs-10 col-xs-offset-1 col-sm-8 col-sm-offset-2 col-md-6 col-md-offset-3 col-lg-4 col-lg-offset-4">
@@ -48,8 +49,8 @@ class OrganizersContainer extends Component {
           </h1>
           <OrganizerForm handleNewOrganizer={this.handleNewOrganizer}/>
           {
-            organizers.reverse().map(organizer =>
-              <OrganizerCard name={organizer.name} id={organizer._id}/>
+            organizers.revers().map(organizer =>
+              <OrganizerCard name={organizer.name} id={organizer._id} handleDeleteOrganizer={deleteThis}/>
             )
           }
         </div>

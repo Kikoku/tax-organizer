@@ -41,18 +41,26 @@ export default function organzier(state = defaultState, action) {
       }
 
     case types.NEW_ORGANIZER_REQUEST:
-      return{
+      return {
         ...state,
         isCreatingOrganizer: true
       }
 
     case types.NEW_ORGANIZER:
-      return{
+      return {
         ...state,
         new: action.res.data._id,
         organizers: [
           ...state.organizers,
           action.res.data
+        ]
+      }
+
+    case types.DELETE_ORGANIZER:
+      return {
+        ...state,
+        organizers: [
+            ...state.organizers.filter(organizer => organizer._id !== action.res.data._id)
         ]
       }
 
