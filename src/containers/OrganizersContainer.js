@@ -49,7 +49,7 @@ class OrganizersContainer extends Component {
           </h1>
           <OrganizerForm handleNewOrganizer={this.handleNewOrganizer}/>
           {
-            organizers.revers().map(organizer =>
+            organizers.reverse().map(organizer =>
               <OrganizerCard name={organizer.name} id={organizer._id} handleDeleteOrganizer={deleteThis}/>
             )
           }
