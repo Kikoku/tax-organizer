@@ -2,12 +2,15 @@ $lightPrimary: #1abc9c;
 $darkPrimary: #16a085;
 $lightSecondary: #ecf0f1;
 $darkSecondary: #7f8c8d;
+$lightTertiary: #e74c3c;
+$darkTertiary: #c0392b;
 
 @import 'Header';
 @import 'Footer';
 
 @import 'Containers';
 @import 'Inputs';
+@import 'Button';
 
 @import 'Pages';
 
