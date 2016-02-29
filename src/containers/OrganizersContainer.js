@@ -11,8 +11,7 @@ import {getOrganizers, newOrganizer, deleteOrganizer} from '../actions/Organizer
   new: state.organizers.new
 }), {
   getOrganizers,
-  newOrganizer,
-  deleteOrganizer
+  newOrganizer
 })
 class OrganizersContainer extends Component {
 
@@ -35,10 +34,6 @@ class OrganizersContainer extends Component {
 
   handleNewOrganizer = (name) => {
     this.props.newOrganizer(name);
-  }
-
-  handleDeleteOrganizer = (id) => {
-    this.props.deleteOrganizer(id);
   }
 
   render() {
