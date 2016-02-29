@@ -22,3 +22,10 @@ export function newOrganizer(name) {
     promise: axios.post(`/api/organizer`, name)
   }
 }
+
+export function deleteOrganizer(id) {
+  return {
+    type: types.DELETE_ORGANIZER,
+    promise: axios.delete(`/api/organizer/${id}`)
+  }
+}
