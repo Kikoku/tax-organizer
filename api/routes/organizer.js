@@ -37,6 +37,10 @@ const routes = [
         params: mongoIdSchema
       }
     }
+  },{
+    method: 'PUT',
+    path: '/organizer/{id}',
+    handler: organizer.update
   }
 ];
 

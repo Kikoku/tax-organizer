@@ -3,6 +3,7 @@ import {connect} from 'react-redux';
 import {getOrganizerById} from '../actions/OrganizerActions'
 
 import SectionContainer from './SectionContainer';
+import SectionForm from '../components/SectionForm';
 
 @connect(state => ({
   organizer: state.organizers.organizer
@@ -22,6 +23,7 @@ class OrganizerContainer extends Component {
         {input.sections.map(section =>
           <SectionContainer name={section.name} questions={section.questions}/>
         )}
+        <SectionForm />
         </div>
       )
     }

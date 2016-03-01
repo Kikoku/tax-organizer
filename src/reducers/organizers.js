@@ -64,6 +64,12 @@ export default function organzier(state = defaultState, action) {
         ]
       }
 
+    case types.NEW_SECTION:
+      return {
+        ...state,
+        organizer: action.res.data
+      }
+
     default:
       return state;
   }

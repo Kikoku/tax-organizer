@@ -31,7 +31,6 @@ const organizerSchema = new Schema({
       _id: false
     }],
 
-    _id: false
   }]
 });
 
