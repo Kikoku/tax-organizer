@@ -41,6 +41,10 @@ const routes = [
     method: 'PUT',
     path: '/organizer/{id}',
     handler: organizer.update
+  },{
+    method: 'DELETE',
+    path: '/organizer/{id}/{sectionId}',
+    handler: organizer.deleteSection
   }
 ];
 
