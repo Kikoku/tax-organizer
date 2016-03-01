@@ -20,10 +20,10 @@ class OrganizerContainer extends Component {
     if(input.sections) {
       return (
         <div>
-        {input.sections.map(section =>
-          <SectionContainer name={section.name} questions={section.questions}/>
-        )}
         <SectionForm />
+        {input.sections.reverse().map(section =>
+          <SectionContainer name={section.name} questions={section.questions} _id={section._id}/>
+        )}
         </div>
       )
     }

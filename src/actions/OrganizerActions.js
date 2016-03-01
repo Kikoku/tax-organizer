@@ -36,3 +36,10 @@ export function newSection(id, section) {
     promise: axios.put(`/api/organizer/${id}`, section)
   }
 }
+
+export function deleteSection(id, sectionId) {
+  return {
+    type: types.DELETE_SECTION,
+    promise: axios.delete(`/api/organizer/${id}/${sectionId}`)
+  }
+}

@@ -70,6 +70,12 @@ export default function organzier(state = defaultState, action) {
         organizer: action.res.data
       }
 
+    case types.DELETE_SECTION:
+      return {
+        ...state,
+        organizer: action.res.data
+      }
+
     default:
       return state;
   }
