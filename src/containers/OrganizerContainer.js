@@ -21,7 +21,7 @@ class OrganizerContainer extends Component {
       return (
         <div>
         {input.sections.map(section =>
-          <SectionContainer name={section.name} questions={section.questions}/>
+          <SectionContainer name={section.name} questions={section.questions} _id={section._id}/>
         )}
         <SectionForm />
         </div>
