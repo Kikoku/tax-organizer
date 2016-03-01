@@ -29,3 +29,10 @@ export function deleteOrganizer(id) {
     promise: axios.delete(`/api/organizer/${id}`)
   }
 }
+
+export function newSection(id, section) {
+  return {
+    type: types.NEW_SECTION,
+    promise: axios.put(`/api/organizer/${id}`, section)
+  }
+}
