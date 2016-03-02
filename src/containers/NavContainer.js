@@ -16,7 +16,11 @@ class NavContainer extends Component {
     return (
       <div>
         {isLoggedIn
-          ? <div className="col-xs-12 col-md-2 username">{user.role=='admin' ? <i className="fa fa-user-secret" /> : <i className="fa fa-user"/>} {user.name}</div>
+          ? <Link to="/profile" className="col-xs-12 col-md-2 username">{
+              user.role=='admin'
+                ? <i className="fa fa-user-secret" />
+                : <i className="fa fa-user"/>} {user.name}
+              </Link>
           : <Link to="/signup" className="col-xs-12 col-md-2"><i className="fa fa-user-plus"></i> Signup</Link>
         }
         {isLoggedIn
