@@ -29,15 +29,20 @@ class SectionContainer extends Component {
   }
 
   renderQuestion(input) {
+
+    const { _id } = this.props;
+
     if(input) {
       return(
         <div className="Question col-lg-12">
         <QuestionForm handleUpdate={this.handleUpdate}/>
           {input.map(question =>
             <QuestionContainer
+              _id={question._id}
               name={question.name}
               inputType={question.inputType}
               options={question.options}
+              sectionId={_id}
             />
           )}
         </div>
