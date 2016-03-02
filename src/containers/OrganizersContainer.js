@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import OrganizerCard from '../components/OrganizerCard';
 import OrganizerForm from '../components/OrganizerForm';
 
@@ -48,11 +50,13 @@ class OrganizersContainer extends Component {
             Organizers
           </h1>
           <OrganizerForm handleNewOrganizer={this.handleNewOrganizer}/>
-          {
-            organizers.reverse().map(organizer =>
-              <OrganizerCard name={organizer.name} id={organizer._id} handleDeleteOrganizer={deleteThis}/>
-            )
-          }
+          <ReactCSSTransitionGroup transitionName="example">
+            {
+              organizers.reverse().map(organizer =>
+                <OrganizerCard name={organizer.name} id={organizer._id} handleDeleteOrganizer={deleteThis}/>
+              )
+            }
+          </ReactCSSTransitionGroup>
         </div>
       </div>
     )

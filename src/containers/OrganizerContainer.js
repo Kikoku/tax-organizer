@@ -1,9 +1,12 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import {getOrganizerById} from '../actions/OrganizerActions'
 
 import SectionContainer from './SectionContainer';
 import SectionForm from '../components/SectionForm';
+
 
 @connect(state => ({
   organizer: state.organizers.organizer
@@ -21,9 +24,11 @@ class OrganizerContainer extends Component {
       return (
         <div>
         <SectionForm />
-        {input.sections.reverse().map(section =>
-          <SectionContainer name={section.name} questions={section.questions} _id={section._id}/>
-        )}
+        <ReactCSSTransitionGroup transitionName="example">
+          {input.sections.reverse().map(section =>
+            <SectionContainer name={section.name} questions={section.questions} _id={section._id}/>
+          )}
+        </ReactCSSTransitionGroup>
         </div>
       )
     }
@@ -40,7 +45,7 @@ class OrganizerContainer extends Component {
             {organizer.name}
           </h1>
         </div>
-        {this.renderSections(organizer)}
+          {this.renderSections(organizer)}
       </div>
     );
   }

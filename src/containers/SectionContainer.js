@@ -1,5 +1,7 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+
 import QuestionContainer from './QuestionContainer';
 import QuestionForm from '../components/QuestionForm';
 import Button from '../components/Button';
@@ -36,15 +38,17 @@ class SectionContainer extends Component {
       return(
         <div className="Question col-lg-12">
         <QuestionForm handleUpdate={this.handleUpdate}/>
-          {input.map(question =>
-            <QuestionContainer
-              _id={question._id}
-              name={question.name}
-              inputType={question.inputType}
-              options={question.options}
-              sectionId={_id}
-            />
-          )}
+          <ReactCSSTransitionGroup transitionName="example">
+            {input.map(question =>
+              <QuestionContainer
+                _id={question._id}
+                name={question.name}
+                inputType={question.inputType}
+                options={question.options}
+                sectionId={_id}
+              />
+            )}
+          </ReactCSSTransitionGroup>
         </div>
       )
     }
