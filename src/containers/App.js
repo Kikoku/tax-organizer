@@ -18,11 +18,11 @@ class App extends Component {
     return (
       <div>
         <DocumentMeta {...config.app} />
-        <Header className="row"/>
-        <main className="row">
+        <Header/>
+        <main>
           {children}
         </main>
-        <Footer className="row"/>
+        <Footer/>
       </div>
     )
   }
