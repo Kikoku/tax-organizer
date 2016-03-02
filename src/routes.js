@@ -8,6 +8,8 @@ import SignupPage from './pages/SignupPage';
 import LoginPage from './pages/LoginPage';
 import LogoutPage from './pages/LogoutPage';
 
+import ProfilePage from './pages/ProfilePage';
+
 import OrganizersPage from './pages/OrganizersPage';
 import OrganizerPage from './pages/OrganizerPage';
 
@@ -33,6 +35,8 @@ export default function createRoutes(store) {
       <Route path="/logout" component={LogoutPage} />
       <Route path="/organizer" component={OrganizersPage} onEnter={requireAuth} />
       <Route path="/organizer/:id" component={OrganizerPage} onEnter={requireAuth} />
+      <Route path="/profile" component={ProfilePage} onEnter={requireAuth} />
+
     </Route>
   );
 }
