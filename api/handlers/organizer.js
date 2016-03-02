@@ -45,15 +45,17 @@ export default {
 
       if(err) return reply(err);
 
-      if(request.payload.id) {
-        organizer.sections.id(request.payload.id).name = request.payload.name
+      if(request.payload._id) {
+        organizer.sections.id(request.payload._id).set({
+          ...request.payload
+        })
 
       } else {
-        
+
         const position = organizer.sections.length;
 
         organizer.sections.push({
-          name: request.payload.name,
+          ...request.payload,
           number: position
         });
 
