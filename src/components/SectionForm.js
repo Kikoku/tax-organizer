@@ -1,12 +1,12 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 
-import {newSection} from '../actions/OrganizerActions';
+import {updateSection} from '../actions/OrganizerActions';
 
 @connect(state => ({
   organizer: state.organizers.organizer
 }), {
-  newSection
+  updateSection
 })
 class SectionForm extends Component {
 
@@ -22,7 +22,7 @@ class SectionForm extends Component {
 
   handleSubmit = (e) => {
     e.preventDefault();
-    this.props.newSection(this.props.organizer._id, {id: false, name: this.state.name});
+    this.props.updateSection(this.props.organizer._id, {id: false, name: this.state.name});
     this.setState({
       name: ''
     })

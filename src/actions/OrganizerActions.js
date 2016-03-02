@@ -30,7 +30,7 @@ export function deleteOrganizer(id) {
   }
 }
 
-export function newSection(id, section) {
+export function updateSection(id, section) {
   return {
     type: types.NEW_SECTION,
     promise: axios.put(`/api/organizer/${id}`, section)

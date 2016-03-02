@@ -1,14 +1,16 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
 import QuestionContainer from './QuestionContainer';
+import QuestionForm from '../components/QuestionForm';
 import Button from '../components/Button';
 
-import {deleteSection} from '../actions/OrganizerActions';
+import {deleteSection, updateSection} from '../actions/OrganizerActions';
 
-@connect(state => ({
-  organizer: state.organizers.organizer
+@connect((state, ownProps) => ({
+  organizer: state.organizers.organizer,
 }), {
-  deleteSection
+  deleteSection,
+  updateSection
 })
 class SectionContainer extends Component {
 
@@ -16,10 +18,21 @@ class SectionContainer extends Component {
     this.props.deleteSection(this.props.organizer._id, this.props._id);
   }
 
+  handleUpdate = (input) => {
+
+    let section = this.props.organizer.sections.filter(section => section._id === this.props._id)[0];
+
+    section.questions.push(input);
+
+    this.props.updateSection(this.props.organizer._id, section);
+
+  }
+
   renderQuestion(input) {
     if(input) {
       return(
         <div className="Question col-lg-12">
+        <QuestionForm handleUpdate={this.handleUpdate}/>
           {input.map(question =>
             <QuestionContainer
               name={question.name}
