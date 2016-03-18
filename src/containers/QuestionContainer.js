@@ -1,6 +1,5 @@
 import React, {Component, PropTypes} from 'react';
 import {connect} from 'react-redux';
-import OptionsContainer from './OptionsContainer';
 
 import Button from '../components/Button';
 
@@ -37,22 +36,12 @@ class QuestionContainer extends Component {
     )
   }
 
-  renderOptions() {
-    if(this.props.options) {
-      return (
-        <OptionsContainer options={this.props.options} inputType={this.props.inputType} />
-      )
-    }
-  }
-
   renderQuestion() {
     switch(this.props.inputType) {
       case 'text':
         return this.renderTextInput();
       case 'textarea':
         return this.renderTextArea();
-      default:
-        return this.renderOptions();
     }
   }
 
