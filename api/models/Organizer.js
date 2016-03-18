@@ -14,22 +14,12 @@ const organizerSchema = new Schema({
   sections: [{
     name: String,
     number: Number,
-
     questions: [{
       name: String,
       number: Number,
       value: String,
-      inputType: String,
-
-      options: [{
-        name: String,
-        number: Number,
-        value: String,
-        _id: false
-      }],
-
-    }],
-
+      inputType: String
+    }]
   }]
 });
 
