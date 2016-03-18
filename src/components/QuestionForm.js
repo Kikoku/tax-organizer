@@ -34,7 +34,7 @@ class QuestionForm extends Component {
 
     return (
       <form className="" onSubmit={this.handleSubmit}>
-        <div className="col-lg-12">
+        <div className="col-lg-9">
           <input
             type="text"
             name="name"
@@ -43,15 +43,6 @@ class QuestionForm extends Component {
             value={name}
             required
           />
-        </div>
-        <div className="col-lg-9">
-          <select onChange={this.handleChange} name="inputType">
-            <option value="text">Text</option>
-            <option value="textarea">Textarea</option>
-            <option value="checkbox">Checkbox</option>
-            <option value="select">Select Menu</option>
-            <option value="radio">Radio Button</option>
-          </select>
         </div>
         <div className="col-lg-3">
           <input
